@@ -6,8 +6,8 @@ global class DeleteContacts {
         RestResponse res = RestContext.response;  
         ContactWrapper recordLists =(ContactWrapper) JSON.deserialize(req.requestbody.toString(),ContactWrapper.class);
         List<Contact> contactsFromJson = ContactManager.getContactsFromWrapper(recordLists);  
-        List<String> emailList = ContactManager.getEmailsFromContacts(contactsFromJson);
-        List<Contact> contactsInJsonInDb = ContactSelector.selectContactsFromEmails(emailList);
+        List<Id> contactList = ContactManager.getIdsFromContacts(contactsFromJson);
+        List<Contact> contactsInJsonInDb = ContactSelector.selectContactsFromIds(contactList);
         List<Contact> contactsWithDesactivatedFieldSetToTrue = ContactManager.setDesactivatedFieldToTrue(contactsInJsonInDb);
         return contactsWithDesactivatedFieldSetToTrue;
     }

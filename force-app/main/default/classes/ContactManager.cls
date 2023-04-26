@@ -5,6 +5,7 @@ public class ContactManager {
         for (ContactWrapper.CtWrapper ctWrap : results.records) {
             if (ctWrap.attributes.type == 'Contact') {
                 Contact ct = new Contact();
+                ct.Id= ctWrap.Id;
                 ct.Email= ctWrap.Email;
                 ct.FirstName= ctWrap.FirstName;
                 ct.LastName= ctWrap.LastName;

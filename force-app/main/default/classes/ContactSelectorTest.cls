@@ -5,12 +5,25 @@ public with sharing class ContactSelectorTest {
     }
     @isTest
     public static void testSelectContactsFromEmails() {
+        List<Contact> contactList = [SELECT Id,email FROM Contact];
         List<String> emailList = new List<String>();
-        for (Integer i=0 ; i<10;i++ ) {
-            emailList.add('TestEmail' + i +'@p12.com');
+        for (Contact ct : contactList) {
+            emailList.add(ct.email);
         }
         Test.startTest();
         List<Contact> contacts = ContactSelector.selectContactsFromEmails(emailList);
+        Test.stopTest();
+        System.assertEquals(10, contacts.size());
+    }
+    @isTest
+    public static void testSelectContactsFromIds() {
+        List<Contact> contactList = [SELECT Id FROM Contact];
+        List<Id> idList = new List<Id>();
+        for (Contact ct : contactList) {
+            idList.add(ct.Id);
+        }
+        Test.startTest();
+        List<Contact> contacts = ContactSelector.selectContactsFromIds(idList);
         Test.stopTest();
         System.assertEquals(10, contacts.size());
     }
