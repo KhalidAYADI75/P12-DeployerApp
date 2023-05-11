@@ -1,3 +1,4 @@
+//CODE UTILISE DANS LE CAS OU ON S APPUIE SUR L EMAIL POUR IDENTIFIER LES CONTACTS ET NON L ID
 @RestResource(urlMapping='/UpdateContacts/*')
 global class UpdateContacts {
 	@HttpPost
