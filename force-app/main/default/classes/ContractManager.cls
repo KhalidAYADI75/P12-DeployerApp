@@ -27,9 +27,6 @@ public class ContractManager {
                 if (ctrWrap.AccountId!=null) {
                     ctr.AccountId = ctrWrap.AccountId;
                 }
-                if (ctrWrap.SalesforceId!=null) {
-                    ctr.Id = ctrWrap.SalesforceId;
-                }
                 if (ctrWrap.Status!=null) {
                     ctr.Status = ctrWrap.Status;
                 }
