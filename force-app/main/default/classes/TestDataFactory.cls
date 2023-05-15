@@ -32,7 +32,7 @@ public with sharing class TestDataFactory {
     }
 
     public static String declareContactJsonStr() {
-        String jsonStr ='{"records" : [{"attributes" : {"type" : "Contact"},"Email" : "testEmail@p12.com","FirstName" : "TestFirst","LastName" : "TestLast"}]}';
+        String jsonStr ='{"records" : [{"attributes" : {"type" : "Contact"},"Email" : "testEmail0@p12.com","FirstName" : "TestFirst","LastName" : "TestLast"}]}';
         return jsonStr;
     }
 

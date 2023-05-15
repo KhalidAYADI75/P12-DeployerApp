@@ -10,5 +10,6 @@ public with sharing class ContactWrapper {
     }           
     public class Attributes {
         public String type;
+        public String Id;
     }
 }

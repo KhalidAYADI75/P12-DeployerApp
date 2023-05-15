@@ -22,6 +22,6 @@ public with sharing class CreateContractsTest {
         Test.startTest();
         List<Id> createdContractIds = CreateContracts.createContractsFromJson();
         Test.stopTest();
-        system.assertNotEquals(null, createdContractIds);
+        system.assertEquals(1,createdContractIds.size());
     }
 }
